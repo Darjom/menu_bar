@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Jagermeister",
+    "image": "jagermeister.jpg",
+    "ingredients": [
+      "Jager"
+    ]
+  },
+  {
+    "name": "Jager Sprite",
+    "image": "jager_sprite.jpg",
+    "ingredients": [
+      "Jager",
+      "Sprite"
+    ]
+  },
+  {
+    "name": "Blu Curazao",
+    "image": "blu_curazao.jpg",
+    "ingredients": [
+      "Blu Curazao"
+    ]
+  },
+  {
+    "name": "Jager Coco Piña",
+    "image": "jager_coco_pina.jpg",
+    "ingredients": [
+      "Jager",
+      "Licor de coco",
+      "Jugo de piña"
+    ]
+  },
+  {
+    "name": "Matador",
+    "image": "matador.jpg",
+    "ingredients": [
+      "Tequila",
+      "Jugo de limón",
+      "Jugo de piña"
+    ]
+  },
+  {
+    "name": "Jager Sunrise",
+    "image": "jager_sunrise.jpg",
+    "ingredients": [
+      "Jager",
+      "Fanta",
+      "Granadina"
+    ]
+  },
+  {
+    "name": "Tequila Sunrise",
+    "image": "tequila_sunrise.jpg",
+    "ingredients": [
+      "Granadina",
+      "Tequila",
+      "Limón",
+      "Jugo de naranja"
+    ]
+  },
+  {
+    "name": "Iguana Azul",
+    "image": "iguana_azul.jpg",
+    "ingredients": [
+      "Tequila Blanco",
+      "Licor de coco",
+      "Blu Curazao",
+      "Limón"
+    ]
+  },
+  {
+    "name": "Cosmopolitan",
+    "image": "cosmopolitan.jpg",
+    "ingredients": [
+      "Vodka",
+      "Limón",
+      "Granadina",
+      "Sprite"
+    ]
+  },
+  {
+    "name": "Margarita",
+    "image": "margarita.jpg",
+    "ingredients": [
+      "Tequila",
+      "Licor de naranja",
+      "Zumo de limón"
+    ]
+  },
+  {
+    "name": "Wiky",
+    "image": "wiky.jpg",
+    "ingredients": []
+  },
+  {
+    "name": "Chuflay",
+    "image": "chuflay.jpg",
+    "ingredients": [
+      "Singani",
+      "Hielo",
+      "Refresco"
+    ]
+  },
+  {
+    "name": "Tricolor",
+    "image": "tricolor.jpg",
+    "ingredients": [
+      "Vodka",
+      "Granadina",
+      "Menta"
+    ]
+  },
+  {
+    "name": "Océano Azul",
+    "image": "oceano_azul.jpg",
+    "ingredients": [
+      "Vodka",
+      "Hielo",
+      "Blue Curazao",
+      "Refresco"
+    ]
+  },
+  {
+    "name": "Delvis Marg",
+    "image": "delvis_marg.jpg",
+    "ingredients": [
+      "Tequila Blanco",
+      "Refresco Pomelo",
+      "Limón",
+      "Granadina"
+    ]
+  },
+  {
+    "name": "Piña Colada",
+    "image": "pina_colada.jpg",
+    "ingredients": [
+      "Piña",
+      "Crema de coco",
+      "Ron"
+    ]
+  },
+  {
+    "name": "Cóctel de Durazno",
+    "image": "coctel_durazno.jpg",
+    "ingredients": [
+      "Durazno",
+      "Leche evaporada",
+      "Hielo",
+      "Vodka"
+    ]
+  },
+  {
+    "name": "Beso Frío",
+    "image": "beso_frio.jpg",
+    "ingredients": [
+      "Café",
+      "Tequila",
+      "Leche evaporada"
+    ]
+  },
+  {
+    "name": "Cielito Lindo",
+    "image": "cielito_lindo.jpg",
+    "ingredients": [
+      "Vodka",
+      "Blu Curazao",
+      "Jugo de piña"
+    ]
+  }
+]
