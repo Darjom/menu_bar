@@ -41,22 +41,39 @@ def home():
 # Guardar un pedido
 @drinks_bp.route('/pedido', methods=['POST'])
 def place_order():
-    print("⚠️ DEBUG: Ingresando a /pedido")
-    print("🔢 request.method:", request.method)
-    print("📦 request.form:", request.form)
+    form = request.form
+    print("📥 Formulario recibido:", form)
 
-    selected = request.form.getlist('selected_drinks')
-    print("📋 selected_drinks:", selected)
+    pedidos = []
+    for drink in form.getlist('selected_drinks'):
+        cantidad_key = f"quantity_{drink.replace(' ', '_')}"
+        cantidad = form.get(cantidad_key)
 
-    if selected:
+        # Validar y normalizar cantidad
+        try:
+            cantidad = int(cantidad)
+            if cantidad < 1:
+                cantidad = 1
+        except (TypeError, ValueError):
+            cantidad = 1  # valor por defecto
+
+        # Solo agregamos cantidad si es mayor que 1
+        if cantidad > 1:
+            pedidos.append(f"{drink} x{cantidad}")
+        else:
+            pedidos.append(drink)
+
+    if pedidos:
         orders = load_orders()
-        orders.append(selected)
+        orders.append(pedidos)
         save_orders(orders)
-        print("✅ Pedido guardado:", orders)
+        print("✅ Pedido guardado:", pedidos)
     else:
-        print("❌ Nada seleccionado...")
+        print("❌ No se seleccionaron tragos.")
 
     return redirect(url_for('drinks.home', pedido='ok'))
+
+
 
 
 
