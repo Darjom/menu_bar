@@ -1,42 +1,98 @@
 [
   {
+    "name": "Margarita",
+    "image": "margarita.jpg",
+    "ingredients": [
+      "Tequila",
+      "Licor de naranja",
+      "Zumo de limón"
+    ]
+  },
+  {
+    "name": "Tricolor",
+    "image": "tricolor.jpg",
+    "ingredients": [
+      "Vodka",
+      "Granadina",
+      "Menta"
+    ]
+  },
+  {
+    "name": "Wiski",
+    "image": "wiski.jpg",
+    "ingredients": []
+  },
+  {
+    "name": "Chuflay",
+    "image": "chuflay.jpg",
+    "ingredients": [
+      "Singani",
+      "Hielo",
+      "Refresco"
+    ]
+  },
+  {
+    "name": "Océano Azul",
+    "image": "oceano_azul.jpg",
+    "ingredients": [
+      "Vodka",
+      "Hielo",
+      "Blue Curazao"
+    ]
+  },
+  {
+    "name": "Delvis Marg",
+    "image": "delvis_marg.jpg",
+    "ingredients": [
+      "Tequila Blanco",
+      "Refresco Pomelo",
+      "Limón",
+      "Granadina"
+    ]
+  },
+  {
+    "name": "Piña Colada",
+    "image": "pina_colada.jpg",
+    "ingredients": [
+      "Piña",
+      "Crema de coco",
+      "Ron"
+    ]
+  },
+  {
+    "name": "Coctel de Durazno",
+    "image": "coctel_durazno.jpg",
+    "ingredients": [
+      "Durazno",
+      "Leche evaporada",
+      "Hielo",
+      "Vodka"
+    ]
+  },
+  {
+    "name": "Beso Frío",
+    "image": "beso_frio.jpg",
+    "ingredients": [
+      "Café",
+      "Tequila",
+      "Leche evaporada"
+    ]
+  },
+  {
+    "name": "Cielito Lindo",
+    "image": "cielito_lindo.jpg",
+    "ingredients": [
+      "Vodka",
+      "Blu curazao",
+      "Jugo de piña"
+    ]
+  },
+  {
     "name": "Jagermeister",
     "image": "jagermeister.jpg",
     "ingredients": [
-      "Jager"
-    ]
-  },
-  {
-    "name": "Jager Sprite",
-    "image": "jager_sprite.jpg",
-    "ingredients": [
-      "Jager",
-      "Sprite"
-    ]
-  },
-  {
-    "name": "Blu Curazao",
-    "image": "blu_curazao.jpg",
-    "ingredients": [
+      "Jager Sprite",
       "Blu Curazao"
-    ]
-  },
-  {
-    "name": "Jager Coco Piña",
-    "image": "jager_coco_pina.jpg",
-    "ingredients": [
-      "Jager",
-      "Licor de coco",
-      "Jugo de piña"
-    ]
-  },
-  {
-    "name": "Matador",
-    "image": "matador.jpg",
-    "ingredients": [
-      "Tequila",
-      "Jugo de limón",
-      "Jugo de piña"
     ]
   },
   {
@@ -44,8 +100,15 @@
     "image": "jager_sunrise.jpg",
     "ingredients": [
       "Jager",
-      "Fanta",
-      "Granadina"
+      "Fanta"
+    ]
+  },
+  {
+    "name": "Jager",
+    "image": "jager.jpg",
+    "ingredients": [
+      "Licor de coco",
+      "Jugo de pila"
     ]
   },
   {
@@ -79,92 +142,8 @@
     ]
   },
   {
-    "name": "Margarita",
-    "image": "margarita.jpg",
-    "ingredients": [
-      "Tequila",
-      "Licor de naranja",
-      "Zumo de limón"
-    ]
-  },
-  {
-    "name": "Wiky",
-    "image": "wiky.jpg",
+    "name": "Cerveza",
+    "image": "cerveza.jpg",
     "ingredients": []
-  },
-  {
-    "name": "Chuflay",
-    "image": "chuflay.jpg",
-    "ingredients": [
-      "Singani",
-      "Hielo",
-      "Refresco"
-    ]
-  },
-  {
-    "name": "Tricolor",
-    "image": "tricolor.jpg",
-    "ingredients": [
-      "Vodka",
-      "Granadina",
-      "Menta"
-    ]
-  },
-  {
-    "name": "Océano Azul",
-    "image": "oceano_azul.jpg",
-    "ingredients": [
-      "Vodka",
-      "Hielo",
-      "Blue Curazao",
-      "Refresco"
-    ]
-  },
-  {
-    "name": "Delvis Marg",
-    "image": "delvis_marg.jpg",
-    "ingredients": [
-      "Tequila Blanco",
-      "Refresco Pomelo",
-      "Limón",
-      "Granadina"
-    ]
-  },
-  {
-    "name": "Piña Colada",
-    "image": "pina_colada.jpg",
-    "ingredients": [
-      "Piña",
-      "Crema de coco",
-      "Ron"
-    ]
-  },
-  {
-    "name": "Cóctel de Durazno",
-    "image": "coctel_durazno.jpg",
-    "ingredients": [
-      "Durazno",
-      "Leche evaporada",
-      "Hielo",
-      "Vodka"
-    ]
-  },
-  {
-    "name": "Beso Frío",
-    "image": "beso_frio.jpg",
-    "ingredients": [
-      "Café",
-      "Tequila",
-      "Leche evaporada"
-    ]
-  },
-  {
-    "name": "Cielito Lindo",
-    "image": "cielito_lindo.jpg",
-    "ingredients": [
-      "Vodka",
-      "Blu Curazao",
-      "Jugo de piña"
-    ]
   }
 ]

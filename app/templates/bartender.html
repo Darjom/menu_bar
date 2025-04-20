@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">📋 Pedidos en Proceso</h2>
+
+  {% if pedidos %}
+  <div class="row justify-content-center">
+    {% for pedido in pedidos %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Pedido #{{ loop.index }}</h5>
+          <ul class="list-group list-group-flush mb-3">
+            {% for drink in pedido %}
+            <li class="list-group-item">{{ drink }}</li>
+            {% endfor %}
+          </ul>
+          <form method="POST" action="{{ url_for('drinks.serve_order') }}">
+            <input type="hidden" name="order_index" value="{{ loop.index0 }}">
+            <button type="submit" class="btn btn-success">Marcar como servido</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center text-muted">No hay pedidos pendientes por ahora.</p>
+  {% endif %}
+</div>
+
+<!-- 🔊 Alerta sonora + auto-refresh -->
+<audio id="alert-sound" src="{{ url_for('static', filename='sound/pedido.mp3') }}" preload="auto"></audio>
+
+<script>
+  const currentCount = {{ pedidos | length }};
+  const previousCount = localStorage.getItem('prevPedidoCount');
+
+  if (previousCount !== null && parseInt(previousCount) < currentCount) {
+    document.getElementById('alert-sound').play();
+  }
+
+  localStorage.setItem('prevPedidoCount', currentCount);
+
+  setTimeout(function () {
+    window.location.reload();
+  }, 10000); // 10 segundos
+</script>
+{% endblock %}

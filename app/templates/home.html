@@ -7,13 +7,17 @@
     <div class="row justify-content-center">
       {% for drink in drinks %}
       <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card h-100 text-center shadow-sm">
-          <img src="{{ url_for('static', filename='img/' + drink.image) }}" class="card-img-top" alt="{{ drink.name }}">
+        <div class="card h-100 text-center shadow-sm clickable-card" data-target="switch{{ loop.index }}">
+          <img src="{{ url_for('static', filename='img/' + drink.image) }}"
+               class="card-img-top" alt="{{ drink.name }}">
           <div class="card-body">
             <h5 class="card-title">{{ drink.name }}</h5>
             <p class="card-text small text-muted">{{ drink.ingredients | join(', ') }}</p>
             <div class="form-check form-switch d-flex justify-content-center">
-              <input class="form-check-input" type="checkbox" name="selected_drinks" value="{{ drink.name }}" id="switch{{ loop.index }}">
+              <input class="form-check-input" type="checkbox"
+                     name="selected_drinks"
+                     value="{{ drink.name }}"
+                     id="switch{{ loop.index }}">
               <label class="form-check-label ms-2" for="switch{{ loop.index }}">Seleccionar</label>
             </div>
           </div>
@@ -23,8 +27,20 @@
     </div>
 
     <div class="text-center mt-4">
-      <button type="submit" class="btn btn-primary px-4 py-2">Hacer pedido</button>
+      <button id="hacer-pedido" type="submit" class="btn btn-primary px-4 py-2">Hacer pedido</button>
     </div>
   </form>
 </div>
+
+<script>
+  // Volvemos a usar el click para alternar el switch confiablemente
+  document.querySelectorAll('.clickable-card').forEach(card => {
+    card.addEventListener('click', function (e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') return;
+      const checkboxId = this.getAttribute('data-target');
+      const checkbox = document.getElementById(checkboxId);
+      if (checkbox) checkbox.checked = !checkbox.checked;
+    });
+  });
+</script>
 {% endblock %}
