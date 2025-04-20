@@ -42,36 +42,39 @@ def home():
 @drinks_bp.route('/pedido', methods=['POST'])
 def place_order():
     form = request.form
-    print("📥 Formulario recibido:", form)
+    drinks_data = load_drinks()
+    drinks_dict = {d["name"]: d for d in drinks_data}
 
     pedidos = []
-    for drink in form.getlist('selected_drinks'):
-        cantidad_key = f"quantity_{drink.replace(' ', '_')}"
+    for drink_name in form.getlist('selected_drinks'):
+        cantidad_key = f"quantity_{drink_name.replace(' ', '_')}"
         cantidad = form.get(cantidad_key)
 
-        # Validar y normalizar cantidad
         try:
             cantidad = int(cantidad)
             if cantidad < 1:
                 cantidad = 1
         except (TypeError, ValueError):
-            cantidad = 1  # valor por defecto
+            cantidad = 1
 
-        # Solo agregamos cantidad si es mayor que 1
-        if cantidad > 1:
-            pedidos.append(f"{drink} x{cantidad}")
-        else:
-            pedidos.append(drink)
+        # Obtener info del trago
+        drink_info = drinks_dict.get(drink_name, {})
+        pedidos.append({
+            "name": drink_name,
+            "cantidad": cantidad,
+            "image": drink_info.get("image", "default.jpg"),
+            "ingredients": drink_info.get("ingredients", [])
+        })
 
     if pedidos:
         orders = load_orders()
         orders.append(pedidos)
         save_orders(orders)
         print("✅ Pedido guardado:", pedidos)
-    else:
-        print("❌ No se seleccionaron tragos.")
 
     return redirect(url_for('drinks.home', pedido='ok'))
+
+
 
 
 

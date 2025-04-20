@@ -6,23 +6,52 @@
   {% if pedidos %}
   <div class="row justify-content-center">
     {% for pedido in pedidos %}
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="card text-center shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">Pedido #{{ loop.index }}</h5>
-          <ul class="list-group list-group-flush mb-3">
-            {% for drink in pedido %}
-            <li class="list-group-item">{{ drink }}</li>
-            {% endfor %}
-          </ul>
-          <form method="POST" action="{{ url_for('drinks.serve_order') }}">
-            <input type="hidden" name="order_index" value="{{ loop.index0 }}">
-            <button type="submit" class="btn btn-success">Marcar como servido</button>
-          </form>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card text-center shadow-sm pedido-card" data-bs-toggle="modal" data-bs-target="#modalPedido{{ loop.index }}">
+          <div class="card-body">
+            <h5 class="card-title">Pedido #{{ loop.index }}</h5>
+            <ul class="list-group list-group-flush mb-3">
+              {% for item in pedido %}
+              <li class="list-group-item">{{ item.name }}{% if item.cantidad > 1 %} x{{ item.cantidad }}{% endif %}</li>
+              {% endfor %}
+            </ul>
+            <form method="POST" action="{{ url_for('drinks.serve_order') }}">
+              <input type="hidden" name="order_index" value="{{ loop.index0 }}">
+              <button type="submit" class="btn btn-success">Marcar como servido</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    {% endfor %}
+
+      <!-- Modal para pedido -->
+      <div class="modal fade" id="modalPedido{{ loop.index }}" tabindex="-1" aria-labelledby="modalLabel{{ loop.index }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel{{ loop.index }}">Detalle del Pedido #{{ loop.index }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                {% for item in pedido %}
+                <div class="col-md-6 mb-3">
+                  <div class="card">
+                    <img src="{{ url_for('static', filename='img/' + item.image) }}" class="card-img-top" alt="{{ item.name }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ item.name }}</h5>
+                      <p class="card-text">Cantidad: {{ item.cantidad }}</p>
+                      <p class="card-text"><strong>Ingredientes:</strong> {{ item.ingredients | join(', ') }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
   </div>
   {% else %}
   <p class="text-center text-muted">No hay pedidos pendientes por ahora.</p>
